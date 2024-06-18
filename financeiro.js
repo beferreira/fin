@@ -44,6 +44,28 @@ export function sacar(saldo, nome) {
 
 }
 
+export function investimento(juros, tempoInvestido, capitalInicial) {
+    console.log(`Informe seu capital inicial`)
+    var capitalInicial = ler()
+     
+    console.log(`Informe a taxa de juros mensal em porcentagem`)
+    var juros = ler()
+
+    console.log(`Informe o tempo investido em mêses`)
+    var tempoInvestido = ler()
+
+    
+    var decimal = juros /100
+    
+    
+    var calculo = capitalInicial * ((1+decimal)**tempoInvestido)
+    
+    var lucro = calculo - capitalInicial
+    
+    return lucro .toFixed(2)
+    
+ } 
+
 export function exibirsaldo(saldo, nome) {
     console.log(`Seu saldo atual é de R$${saldo}`)
 }

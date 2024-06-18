@@ -2,7 +2,7 @@ import prompt from 'prompt-sync'
 let ler = prompt()
 
 import { mensagem, mensagem1, lerNumero, lerText } from './exibicao.js'
-import {depositar, sacar, exibirsaldo} from './financeiro.js'
+import {depositar, sacar, exibirsaldo, investimento} from './financeiro.js'
 import {menu} from './menu.js'
 
 mensagem1('Seja bem-vindo(a)! Informe o seu nome e o seu saldo:')
@@ -26,7 +26,15 @@ while (continuar) {
    else if (opcao == 3) {
     exibirsaldo(saldo, nome)
    }
-   else if (opcao == 4) {
+
+   else if (opcao == 4){
+      let invest = investimento()
+
+      console.log(`Você obteve um lucro de R$${invest}`)
+
+   }
+  
+   else if (opcao == 5) {
      continuar = false
      mensagem(`Obrigado por utilizar nosso sistema Sr(a). ${nome}`)
    }
